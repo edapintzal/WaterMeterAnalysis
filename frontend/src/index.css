@@ -1,0 +1,160 @@
+/* ☀️ AÇIK TEMA (Light Mode - Varsayılan) */
+:root {
+  --ana-arkaplan: #C4E2F5;
+  --kutu-arkaplan: #C4E2F5; /* Hafif kırık beyaz/gri */
+  --metin-rengi: #1e293b;
+  --kenarlik: #e2e8f0;
+  
+  /* Seçtiğin Su/Kurumsal Teması Paleti */
+  --mavi-koyu: #2C5EAD;
+  --mavi-orta: #1591DC;
+  --mavi-parlak: #4BB8FA;
+  --mavi-acik: #C4E2F5;
+  
+  /* Risk ve Durum Renkleri */
+  --risk-arkaplan: #ffebee;
+  --risk-metin: #d32f2f;
+}
+/* TÜM SAYFANIN ARKA PLANINI TEMAYA BAĞLIYORUZ */
+body {
+  background-color: #2C5EAD;
+  color: var(--metin-rengi);
+  margin: 0;
+  padding: 0;
+  /* İsteğe bağlı: Yazı tipini daha modern ve kurumsal yapmak için */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Temalar arası geçişi yumuşatır */
+}
+
+/* 🌙 KARANLIK TEMA (Dark Mode - Sistem karanlık moda geçince tetiklenir) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ana-arkaplan: #0f172a; /* Çok koyu lacivert/siyah */
+    --kutu-arkaplan: #C4E2F5; /* Koyu kart arkaplanı */
+    --metin-rengi: #1e293b; /* Açık gri/beyaz metin */
+    --kenarlik: #334155;
+    
+    /* Karanlık tema için mavi palet adaptasyonu */
+    --mavi-koyu: #4BB8FA;  /* Vurgular karanlıkta okunabilmek için daha parlak olmalı */
+    --mavi-orta: #1591DC;
+    --mavi-parlak: #2C5EAD; 
+    --mavi-acik: #1e3a5f;  /* Koyu lacivert (açık mavi karanlıkta çok patlar) */
+    
+    /* Risk ve Durum Renkleri Karanlık */
+    --risk-arkaplan: #ffebee;
+    --risk-metin: #ef4444;
+  }
+}
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+/* --- YAZDIRMA (PRINT) ÖZEL AYARLARI --- */
+/* Normal ekranda bu başlığı gizle */
+.sadece-print {
+  display: none;
+}
+
+/* YAZDIRMA (PRINT) ÖZEL AYARLARI */
+@media print {
+  nav, button, select, input, .gizle-print {
+    display: none !important;
+  }
+  
+  /* Kağıtta rapor başlığını ortaya çıkar */
+  .sadece-print {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+  
+  th, td {
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    padding: 8px !important;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+/* Chrome, Safari, Edge, Opera için okları gizle */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox için okları gizle */
+input[type=number] {
+  -moz-appearance: textfield;
+}
